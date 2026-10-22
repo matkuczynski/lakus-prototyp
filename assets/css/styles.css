@@ -17,7 +17,7 @@
   --petrol: #08648D;      /* linki, pierścień na tarczy */
   --brass: #B08D57;       /* mosiężny korpus – ciepły akcent */
   --brass-dk: #8A6A3A;
-  --red: #D3262D;         /* gwiazdka, wskazówki, czerwone bębenki i przyciski telefonu/zgłoszenia */
+  --red: #D3262D;         /* gwiazdka, wskazówki, czerwone bębenki i przyciski „Zgłoś szkodę” */
   --red-dk: #B51F25;      /* hover przycisków alertu */
   --drum: #10171B;        /* okienka bębenków */
   --line: #DCD9D2;
@@ -112,8 +112,7 @@ ul, ol { padding: 0; list-style: none; }
 .hero .actions { grid-area: a; }
 .hero .path-b { grid-area: p; }
 .meter-fig { grid-area: m; align-self: center; justify-self: center; width: 100%; max-width: clamp(340px, calc(100svh - 370px), 560px); }
-/* bliźniacze przyciski: kolumny równej szerokości obok siebie, a gdy brak miejsca – jedna pod drugą */
-.actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, max-content)); justify-content: start; gap: 12px 14px; margin-top: 30px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px 14px; margin-top: 30px; }
 .path-b { margin-top: 22px; font-weight: 500; }
 .hero a:not(.btn) { color: var(--ink); }
 .hero a:not(.btn):hover { color: var(--ink); text-decoration-thickness: 2px; }
@@ -403,7 +402,7 @@ ul, ol { padding: 0; list-style: none; }
   .film-list { grid-template-columns: minmax(0, 1fr); }
   .quotes { grid-template-columns: minmax(0, 1fr); }
   .plate-data { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .callbar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--line); box-shadow: 0 -12px 24px -18px rgba(14, 42, 56, .35); transform: translateY(110%); transition: transform .35s var(--ease); }
+  .callbar { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--line); box-shadow: 0 -12px 24px -18px rgba(14, 42, 56, .35); transform: translateY(110%); transition: transform .35s var(--ease); }
   .callbar.show { transform: none; }
   .callbar .btn { min-height: 50px; padding-inline: 16px; }
   .foot { padding-bottom: 110px; }
@@ -413,7 +412,7 @@ ul, ol { padding: 0; list-style: none; }
   .tel { width: 46px; height: 46px; justify-content: center; border: 1.5px solid var(--ink); border-radius: 50%; }
   .tel .i { width: 20px; height: 20px; }
   .display { font-size: clamp(2rem, 8.4vw, 2.6rem); }
-  .actions { grid-template-columns: minmax(0, 1fr); }
+  .actions .btn { width: 100%; }
   .check-note { grid-template-columns: minmax(0, 1fr); }
   .case-grid { grid-template-columns: minmax(0, 1fr); }
   .ph { aspect-ratio: 16 / 9; }
